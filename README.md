@@ -1,5 +1,5 @@
 # NBA-playoff-predictor
-Python program that uses logistic regression to predict the 2019 NBA playoffs
+Python program to predict the 2019 NBA playoffs
 
 Using BeautifulSoup to scrape the web, pandas dataframes to store scraped data and logistic regression, the program attempts to predict the results of the 2019 NBA playoffs.
 
