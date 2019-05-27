@@ -80,49 +80,67 @@ while (currentRound < 5):
 		regular_feature_values = regular_df.iloc[:, [0, 1, 2, 3, 4, 5, 6, 7]]
 		prediction = model.predict(regular_feature_values)
 
-		
+		val = model.decision_function(regular_feature_values)/np.sum(regular_feature_values.values)
+		probability = 1/(1+np.exp(-val))
+
 		if currentRound == 1:
 
 			if i == 0:
 				if prediction == 1:
 					print ("Milwaukee Bucks over the Detroit Pistons")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Detroit Pistons over the Milwaukee Bucks")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 1:
 				if prediction == 1:
 					print ("Toronto Raptors over the Orlando Magic")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Orlando Magic over the Toronto Raptors")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 2:
 				if prediction == 1:
 					print ("Philadelphia 76ers over the Brooklyn Nets")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Brooklyn Nets over the Philadelphia 76ers")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 3:
 				if prediction == 1:
 					print ("Indiana Pacers over the Boston Celtics")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Boston Celtics over the Indiana Pacers")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 4:
 				if prediction == 1:
 					print ("Golden State Warriors over the Los Angeles Clippers")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Los Angeles Clippers over the Golden State Warriors")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 5:
 				if prediction == 1:
 					print ("Denver Nuggets over the San Antonio Spurs")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("San Antonio Spurs over the Denver Nuggets")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 6:
 				if prediction == 1:
 					print ("Oklahoma City Thunder over the Portland Trailblazers")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Portland Trailblazers over the Oklahoma City Thunder")
+					print ("confidence: ", probability[0]*100, "%")
 			else:
 				if prediction == 1:
 					print ("Houston Rockets over the Utah Jazz")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Utah Jazz over the Houston Rockets")
+					print ("confidence: ", probability[0]*100, "%")
 
 			print ("\n")
 
@@ -131,23 +149,31 @@ while (currentRound < 5):
 			if i == 0:
 				if prediction == 1:
 					print ("Milwaukee Bucks over the Boston Celtics")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Boston Celtics over the Milwaukee Bucks")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 1:
 				if prediction == 1:
 					print ("Toronto Raptors over the Philadelphia 76ers")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Philadelphia 76ers over the Toronto Raptors")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 2:
 				if prediction == 1:
 					print ("Golden State Warriors over the Houston Rockets")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Houston Rockets over the Golden State Warriors")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 3:
 				if prediction == 1:
 					print ("Denver Nuggets over the Oklahoma City Thunder")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Oklahoma City Thunder over the Denver Nuggets")
+					print ("confidence: ", probability[0]*100, "%")
 
 			print ("\n")
 
@@ -156,20 +182,26 @@ while (currentRound < 5):
 			if i == 0:
 				if prediction == 1:
 					print ("Milwaukee Bucks over the Philadelphia 76ers")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Philadelphia 76ers over the Milwaukee Bucks")
+					print ("confidence: ", probability[0]*100, "%")
 			elif i == 1:
 				if prediction == 1:
 					print ("Golden State Warriors over the Oklahoma City Thunder")
+					print ("confidence: ", probability[0]*100, "%")
 				else:
 					print ("Oklahoma City Thunder over the Golden State Warriors")
+					print ("confidence: ", probability[0]*100, "%")
 
 			print ("\n")
 
 		else:
 			if prediction == 1:
 				print ("Milwaukee Bucks over the Golden State Warriors")
+				print ("confidence: ", probability[0]*100, "%")
 			else:
 				print ("Golden State Warriors over the Milwaukee Bucks")
+				print ("confidence: ", probability[0]*100, "%")
 
 	currentRound += 1
